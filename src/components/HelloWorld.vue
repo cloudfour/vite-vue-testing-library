@@ -18,14 +18,20 @@
   </p>
 </template>
 
-<script setup>
-import { defineProps, reactive } from 'vue'
+<script>
+import { ref } from "vue";
 
-defineProps({
-  msg: String
-})
-
-const state = reactive({ count: 0 })
+export default {
+  props: {
+    msg: String,
+  },
+  setup() {
+    const state = ref({ count: 0 });
+    return {
+      state,
+    };
+  },
+};
 </script>
 
 <style scoped>
